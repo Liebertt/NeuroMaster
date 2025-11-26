@@ -12,12 +12,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total, label }) => {
   return (
     <div className="w-full">
       {label && (
-        <div className="flex justify-between text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wider">
+        <div className="flex justify-between text-xs font-semibold text-gray-600 dark:text-slate-400 mb-1 uppercase tracking-wider">
           <span>{label}</span>
           <span>{Math.round(percentage)}%</span>
         </div>
       )}
-      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+      <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-3 overflow-hidden">
         <div 
           className="bg-gradient-to-r from-brand-500 to-teal-400 h-3 rounded-full transition-all duration-500 ease-out" 
           style={{ width: `${percentage}%` }}

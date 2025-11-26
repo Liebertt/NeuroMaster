@@ -7,8 +7,11 @@
     <!-- Tailwind via CDN para simplificar o setup sem postcss.config.js -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Adiciona o plugin typography para estilizar o resumo HTML -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class', // Habilita modo escuro via classe 'dark' no html
         theme: {
           extend: {
             fontFamily: {
@@ -29,7 +32,9 @@
       }
     </script>
     <style>
-      body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+      body { font-family: 'Inter', sans-serif; }
+      /* Smooth transition for colors when switching themes */
+      * { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 200ms; }
       .card-flip { perspective: 1000px; }
       .card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
       .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border-radius: 0.75rem; }
